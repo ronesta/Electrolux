@@ -18,23 +18,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
 
         let mainViewController = ViewController()
+        let mainNavigationController = UINavigationController(rootViewController: mainViewController)
         let mainTabBarItem = UITabBarItem(title: "First Tab",
                                           image: UIImage(systemName: "1.circle"),
                                           tag: 0)
         mainTabBarItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 16)], for: .normal)
-        mainViewController.tabBarItem = mainTabBarItem
+        mainNavigationController.tabBarItem = mainTabBarItem
 
         let paymentsViewController = UIViewController()
+        let paymentsNavigationController = UINavigationController(rootViewController: paymentsViewController)
         let paymentsTabBarItem = UITabBarItem(title: "Second Tab",
                                               image: UIImage(systemName: "2.circle"),
                                               tag: 1)
         paymentsTabBarItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 16)], for: .normal)
-        paymentsViewController.tabBarItem = paymentsTabBarItem
+        paymentsNavigationController.tabBarItem = paymentsTabBarItem
 
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [mainViewController,
-                                            paymentsViewController
-                                           ]
+        tabBarController.viewControllers = [mainNavigationController,
+                                            paymentsNavigationController]
 
         tabBarController.tabBar.barTintColor = .white
 
