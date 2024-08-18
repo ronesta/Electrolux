@@ -10,7 +10,7 @@
 		94314B00D6E17359BD81626F /* Pods_Electrolux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7F99DE2D4D144FFB95971 /* Pods_Electrolux.framework */; };
 		E1570D432C6D23CC00886E75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1570D422C6D23CC00886E75 /* AppDelegate.swift */; };
 		E1570D452C6D23CC00886E75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1570D442C6D23CC00886E75 /* SceneDelegate.swift */; };
-		E1570D472C6D23CC00886E75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1570D462C6D23CC00886E75 /* ViewController.swift */; };
+		E1570D472C6D23CC00886E75 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1570D462C6D23CC00886E75 /* FirstViewController.swift */; };
 		E1570D4C2C6D23CE00886E75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1570D4B2C6D23CE00886E75 /* Assets.xcassets */; };
 		E1570D4F2C6D23CE00886E75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1570D4D2C6D23CE00886E75 /* LaunchScreen.storyboard */; };
 		E1570D582C6D24DA00886E75 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1570D572C6D24DA00886E75 /* SnapKit */; };
@@ -21,7 +21,7 @@
 		E1570D3F2C6D23CC00886E75 /* Electrolux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrolux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1570D422C6D23CC00886E75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1570D442C6D23CC00886E75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E1570D462C6D23CC00886E75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1570D462C6D23CC00886E75 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		E1570D4B2C6D23CE00886E75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1570D4E2C6D23CE00886E75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1570D502C6D23CE00886E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +56,6 @@
 				F85375B9FB69F6B1A79E47B3 /* Pods-Electrolux.debug.xcconfig */,
 				E2F3A511C917A53AD965FDAE /* Pods-Electrolux.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,7 +82,7 @@
 			children = (
 				E1570D422C6D23CC00886E75 /* AppDelegate.swift */,
 				E1570D442C6D23CC00886E75 /* SceneDelegate.swift */,
-				E1570D462C6D23CC00886E75 /* ViewController.swift */,
+				E1570D462C6D23CC00886E75 /* FirstViewController.swift */,
 				E1570D4B2C6D23CE00886E75 /* Assets.xcassets */,
 				E1570D4D2C6D23CE00886E75 /* LaunchScreen.storyboard */,
 				E1570D502C6D23CE00886E75 /* Info.plist */,
@@ -231,7 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1570D472C6D23CC00886E75 /* ViewController.swift in Sources */,
+				E1570D472C6D23CC00886E75 /* FirstViewController.swift in Sources */,
 				E1570D432C6D23CC00886E75 /* AppDelegate.swift in Sources */,
 				E1570D452C6D23CC00886E75 /* SceneDelegate.swift in Sources */,
 			);

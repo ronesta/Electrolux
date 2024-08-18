@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
 
-        let mainViewController = ViewController()
+        let mainViewController = FirstViewController()
         let mainNavigationController = UINavigationController(rootViewController: mainViewController)
         let mainTabBarItem = UITabBarItem(title: "First Tab",
                                           image: UIImage(systemName: "1.circle"),
