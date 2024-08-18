@@ -14,7 +14,6 @@ class FirstViewController: UIViewController {
     let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .minimal
-        
         return searchBar
     }()
 
@@ -24,9 +23,12 @@ class FirstViewController: UIViewController {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
+        collectionView.register(
+            CustomCollectionViewCell.self,
+            forCellWithReuseIdentifier: CustomCollectionViewCell.id
+        )
 
         return collectionView
     }()
@@ -45,6 +47,8 @@ class FirstViewController: UIViewController {
     func setupViews() {
         view.addSubview(searchBar)
         view.addSubview(collectionView)
+        collectionView.dataSource = self
+        collectionView.delegate = self
 
         searchBar.autoAlignAxis(toSuperviewAxis: .vertical)
         searchBar.autoPinEdge(toSuperviewSafeArea: .top)
@@ -56,4 +60,14 @@ class FirstViewController: UIViewController {
         collectionView.autoPinEdge(toSuperviewEdge: .trailing)
         collectionView.autoPinEdge(toSuperviewSafeArea: .bottom)
     }
+}
+
+extension FirstViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+
+}
+
+extension FirstViewController: UICollectionViewDelegate {
 }
