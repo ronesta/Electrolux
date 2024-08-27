@@ -10,18 +10,29 @@
 		94314B00D6E17359BD81626F /* Pods_Electrolux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7F99DE2D4D144FFB95971 /* Pods_Electrolux.framework */; };
 		E12C57AD2C723DD4006D88A6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C57AC2C723DD4006D88A6 /* SecondViewController.swift */; };
 		E12C57B32C724D40006D88A6 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C57B22C724D40006D88A6 /* CustomCollectionViewCell.swift */; };
+		E12C57B52C726465006D88A6 /* DescriptionOfProductFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C57B42C726465006D88A6 /* DescriptionOfProductFile.swift */; };
+		E12C57B72C7265DD006D88A6 /* ProductCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C57B62C7265DD006D88A6 /* ProductCardViewController.swift */; };
+		E12C57B92C726665006D88A6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C57B82C726665006D88A6 /* NetworkManager.swift */; };
+		E12C58F32C7CE4FC006D88A6 /* PostImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C58F22C7CE4FC006D88A6 /* PostImages.swift */; };
+		E12C58F52C7CF8A0006D88A6 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C58F42C7CF8A0006D88A6 /* ImageCache.swift */; };
 		E1570D432C6D23CC00886E75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1570D422C6D23CC00886E75 /* AppDelegate.swift */; };
 		E1570D452C6D23CC00886E75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1570D442C6D23CC00886E75 /* SceneDelegate.swift */; };
 		E1570D472C6D23CC00886E75 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1570D462C6D23CC00886E75 /* FirstViewController.swift */; };
 		E1570D4C2C6D23CE00886E75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1570D4B2C6D23CE00886E75 /* Assets.xcassets */; };
 		E1570D4F2C6D23CE00886E75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1570D4D2C6D23CE00886E75 /* LaunchScreen.storyboard */; };
 		E1570D582C6D24DA00886E75 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1570D572C6D24DA00886E75 /* SnapKit */; };
+		E1CCB9C12C7E54FE00774927 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CCB9C02C7E54FE00774927 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4CE7F99DE2D4D144FFB95971 /* Pods_Electrolux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Electrolux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12C57AC2C723DD4006D88A6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		E12C57B22C724D40006D88A6 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		E12C57B42C726465006D88A6 /* DescriptionOfProductFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionOfProductFile.swift; sourceTree = "<group>"; };
+		E12C57B62C7265DD006D88A6 /* ProductCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewController.swift; sourceTree = "<group>"; };
+		E12C57B82C726665006D88A6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E12C58F22C7CE4FC006D88A6 /* PostImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImages.swift; sourceTree = "<group>"; };
+		E12C58F42C7CF8A0006D88A6 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		E1570D3F2C6D23CC00886E75 /* Electrolux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrolux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1570D422C6D23CC00886E75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1570D442C6D23CC00886E75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +40,7 @@
 		E1570D4B2C6D23CE00886E75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1570D4E2C6D23CE00886E75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1570D502C6D23CE00886E75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1CCB9C02C7E54FE00774927 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E2F3A511C917A53AD965FDAE /* Pods-Electrolux.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Electrolux.release.xcconfig"; path = "Target Support Files/Pods-Electrolux/Pods-Electrolux.release.xcconfig"; sourceTree = "<group>"; };
 		F85375B9FB69F6B1A79E47B3 /* Pods-Electrolux.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Electrolux.debug.xcconfig"; path = "Target Support Files/Pods-Electrolux/Pods-Electrolux.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,16 +96,30 @@
 		E1570D412C6D23CC00886E75 /* Electrolux */ = {
 			isa = PBXGroup;
 			children = (
-				E1570D422C6D23CC00886E75 /* AppDelegate.swift */,
-				E1570D442C6D23CC00886E75 /* SceneDelegate.swift */,
+				E1CCB9BF2C7E4F9C00774927 /* Application */,
 				E1570D462C6D23CC00886E75 /* FirstViewController.swift */,
+				E12C57B62C7265DD006D88A6 /* ProductCardViewController.swift */,
 				E12C57AC2C723DD4006D88A6 /* SecondViewController.swift */,
 				E12C57B22C724D40006D88A6 /* CustomCollectionViewCell.swift */,
+				E12C57B42C726465006D88A6 /* DescriptionOfProductFile.swift */,
+				E12C57B82C726665006D88A6 /* NetworkManager.swift */,
+				E1CCB9C02C7E54FE00774927 /* NetworkError.swift */,
+				E12C58F22C7CE4FC006D88A6 /* PostImages.swift */,
+				E12C58F42C7CF8A0006D88A6 /* ImageCache.swift */,
 				E1570D4B2C6D23CE00886E75 /* Assets.xcassets */,
 				E1570D4D2C6D23CE00886E75 /* LaunchScreen.storyboard */,
 				E1570D502C6D23CE00886E75 /* Info.plist */,
 			);
 			path = Electrolux;
+			sourceTree = "<group>";
+		};
+		E1CCB9BF2C7E4F9C00774927 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E1570D422C6D23CC00886E75 /* AppDelegate.swift */,
+				E1570D442C6D23CC00886E75 /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +252,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "
+";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -236,10 +263,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12C58F52C7CF8A0006D88A6 /* ImageCache.swift in Sources */,
 				E12C57AD2C723DD4006D88A6 /* SecondViewController.swift in Sources */,
+				E12C57B52C726465006D88A6 /* DescriptionOfProductFile.swift in Sources */,
+				E12C57B72C7265DD006D88A6 /* ProductCardViewController.swift in Sources */,
 				E12C57B32C724D40006D88A6 /* CustomCollectionViewCell.swift in Sources */,
+				E12C57B92C726665006D88A6 /* NetworkManager.swift in Sources */,
 				E1570D472C6D23CC00886E75 /* FirstViewController.swift in Sources */,
+				E12C58F32C7CE4FC006D88A6 /* PostImages.swift in Sources */,
 				E1570D432C6D23CC00886E75 /* AppDelegate.swift in Sources */,
+				E1CCB9C12C7E54FE00774927 /* NetworkError.swift in Sources */,
 				E1570D452C6D23CC00886E75 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

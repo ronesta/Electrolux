@@ -17,25 +17,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
 
-        let mainViewController = FirstViewController()
-        let mainNavigationController = UINavigationController(rootViewController: mainViewController)
-        let mainTabBarItem = UITabBarItem(title: "First Tab",
+        let firstViewController = FirstViewController()
+        let firstNavigationController = UINavigationController(rootViewController: firstViewController)
+        let firstTabBarItem = UITabBarItem(title: "First Tab",
                                           image: UIImage(systemName: "1.circle"),
                                           tag: 0)
-        mainTabBarItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 16)], for: .normal)
-        mainNavigationController.tabBarItem = mainTabBarItem
+        firstTabBarItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 16)], for: .normal)
+        firstNavigationController.tabBarItem = firstTabBarItem
 
-        let paymentsViewController = UIViewController()
-        let paymentsNavigationController = UINavigationController(rootViewController: paymentsViewController)
-        let paymentsTabBarItem = UITabBarItem(title: "Second Tab",
+        let secondViewController = SecondViewController()
+        let secondNavigationController = UINavigationController(rootViewController: secondViewController)
+        let secondTabBarItem = UITabBarItem(title: "Second Tab",
                                               image: UIImage(systemName: "2.circle"),
                                               tag: 1)
-        paymentsTabBarItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 16)], for: .normal)
-        paymentsNavigationController.tabBarItem = paymentsTabBarItem
+        secondTabBarItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 16)], for: .normal)
+        secondNavigationController.tabBarItem = secondTabBarItem
 
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [mainNavigationController,
-                                            paymentsNavigationController]
+        tabBarController.viewControllers = [firstNavigationController,
+                                            secondNavigationController]
 
         tabBarController.tabBar.barTintColor = .white
 

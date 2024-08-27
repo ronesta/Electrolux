@@ -248,6 +248,8 @@
 				914E2A0ADBAFB2786C72A25821C3A404 /* PBXTargetDependency */,
 			);
 			name = "Pods-Electrolux";
+			packageProductDependencies = (
+			);
 			productName = Pods_Electrolux;
 			productReference = 3691DCCE44BAC2DDA0502B9B302432C7 /* Pods-Electrolux */;
 			productType = "com.apple.product-type.framework";
@@ -270,6 +272,8 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			packageReferences = (
+			);
 			productRefGroup = C19C3328DF349203E149C56A8DCBB189 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
