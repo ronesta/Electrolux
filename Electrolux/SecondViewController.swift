@@ -87,19 +87,20 @@ final class SecondViewController: UIViewController {
         imageView.autoAlignAxis(toSuperviewAxis: .vertical)
         imageView.autoPinEdge(.top, to: .top, of: scrollView, withOffset: 20)
 
-        productName.autoPinEdge(.top, to: .bottom, of: imageView, withOffset: 40)
-        productName.autoPinEdge(.trailing, to: .leading, of: modelName, withOffset: 10)
-        productName.autoPinEdge(.leading, to: .leading, of: view, withOffset: 46)
-        productName.autoSetDimension(.width, toSize: (view.frame.size.width / 2) - 40)
+        productName.autoPinEdge(.top, to: .bottom, of: imageView, withOffset: 30)
+        productName.autoPinEdge(.leading, to: .leading, of: view, withOffset: 45)
+        productName.autoPinEdge(.trailing, to: .leading, of: modelName, withOffset: -10)
 
-        modelName.autoPinEdge(.top, to: .bottom, of: imageView, withOffset: 40)
+        modelName.autoPinEdge(.top, to: .bottom, of: imageView, withOffset: 30)
         modelName.autoPinEdge(.leading, to: .trailing, of: productName, withOffset: 10)
-        modelName.autoPinEdge(.trailing, to: .trailing, of: view, withOffset: -41)
-        modelName.autoMatch(.width, to: .width, of: productName)
+        modelName.autoPinEdge(.trailing, to: .trailing, of: view, withOffset: -20)
+
+        productName.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        modelName.setContentHuggingPriority(.defaultHigh, for: .horizontal)
 
         titleLabel.autoPinEdge(.leading, to: .leading, of: view, withOffset: 20)
         titleLabel.autoPinEdge(.trailing, to: .trailing, of: view, withOffset: -20)
-        titleLabel.autoPinEdge(.top, to: .bottom, of: productName, withOffset: 40)
+        titleLabel.autoPinEdge(.top, to: .bottom, of: productName, withOffset: 35)
 
         descriptionLabel.autoPinEdge(.top, to: .bottom, of: titleLabel, withOffset: 20)
         descriptionLabel.autoPinEdge(.leading, to: .leading, of: view, withOffset: 20)

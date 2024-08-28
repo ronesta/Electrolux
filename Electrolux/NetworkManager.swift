@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkManager {
+final class NetworkManager {
     static let shared = NetworkManager()
 
     private init() {}
@@ -24,13 +24,13 @@ class NetworkManager {
         }
 
         session.dataTask(with: url) { data, _, error in
-            if let error = error {
+            if let error {
                 print("Error: \(error.localizedDescription)")
                 completion(.failure(error))
                 return
             }
 
-            guard let data = data else {
+            guard let data else {
                 print("No data")
                 completion(.failure(NetworkError.noData))
                 return
@@ -38,10 +38,11 @@ class NetworkManager {
 
             do {
                 let photos = try JSONDecoder().decode(PostImages.self, from: data)
-                let items = photos.photos.photo.filter { $0.urlO != nil }
-                let limitedItems = Array(items.prefix(20))
-                print("Loaded \(limitedItems.count) photos")
-                completion(.success(limitedItems))
+                let items = photos.photos.photo.compactMap {
+                    $0.urlO != nil ? $0 : nil
+                }.prefix(20)
+                print("Loaded \(items.count) photos")
+                completion(.success(Array(items)))
             } catch {
                 print("Decoding error: \(error.localizedDescription)")
                 completion(.failure(error))

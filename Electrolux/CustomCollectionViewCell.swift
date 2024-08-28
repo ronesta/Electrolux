@@ -23,6 +23,7 @@ final class CustomCollectionViewCell: UICollectionViewCell {
     let activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .medium)
         activityIndicator.hidesWhenStopped = true
+
         return activityIndicator
     }()
 

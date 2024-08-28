@@ -18,12 +18,20 @@ final class FirstViewController: UIViewController {
 
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width / 2.5), height: (UIScreen.main.bounds.width / 2.5))
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width / 2.5),
+                                 height: (UIScreen.main.bounds.width / 2.5)
+                                )
         layout.minimumLineSpacing = 50
         layout.minimumInteritemSpacing = 50
-        layout.sectionInset = UIEdgeInsets(top: 11, left: 11, bottom: 10, right: 11)
+        layout.sectionInset = UIEdgeInsets(top: 11,
+                                           left: 11,
+                                           bottom: 10,
+                                           right: 11
+                                          )
 
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero,
+                                              collectionViewLayout: layout
+                                             )
         collectionView.backgroundColor = .clear
         collectionView.register(
             CustomCollectionViewCell.self,
@@ -84,16 +92,18 @@ final class FirstViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension FirstViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        photos.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.id, for: indexPath) as? CustomCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.id, for: indexPath)
+                as? CustomCollectionViewCell else {
             return UICollectionViewCell()
         }
 
         let photo = photos[indexPath.item]
-        guard let currentUrlString = photo.urlO, let currentUrl = URL(string: currentUrlString) else {
+        guard let currentUrlString = photo.urlO,
+              let currentUrl = URL(string: currentUrlString) else {
             return cell
         }
 
@@ -110,7 +120,8 @@ extension FirstViewController: UICollectionViewDataSource {
                     return
                 }
 
-                guard let data = data, let image = UIImage(data: data) else {
+                guard let data = data,
+                      let image = UIImage(data: data) else {
                     print("Invalid Data or Image")
                     return
                 }
@@ -137,10 +148,13 @@ extension FirstViewController: UICollectionViewDelegate {
 
         let productImageViewController = ProductCardViewController()
 
-        navigationController?.pushViewController(productImageViewController, animated: true)
+        navigationController?.pushViewController(productImageViewController,
+                                                 animated: true
+                                                )
 
         let photo = photos[indexPath.item]
-        guard let currentUrlString = photo.urlO, let currentUrl = URL(string: currentUrlString) else {
+        guard let currentUrlString = photo.urlO,
+              let currentUrl = URL(string: currentUrlString) else {
             return
         }
 
