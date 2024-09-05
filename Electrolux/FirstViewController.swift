@@ -96,47 +96,12 @@ extension FirstViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let content = photos[indexPath.item]
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.id, for: indexPath)
                 as? CustomCollectionViewCell else {
             return UICollectionViewCell()
         }
-
-        let photo = photos[indexPath.item]
-        guard let currentUrlString = photo.urlO,
-              let currentUrl = URL(string: currentUrlString) else {
-            return cell
-        }
-
-        cell.image.image = nil
-        cell.activityIndicator.startAnimating()
-
-        if let cachedImage = ImageCache.shared.object(forKey: currentUrlString as NSString) {
-            cell.image.image = cachedImage
-            cell.activityIndicator.stopAnimating()
-        } else {
-            URLSession.shared.dataTask(with: currentUrl) { data, response, error in
-                if error != nil {
-                    print("Data Task Error:", error!.localizedDescription)
-                    return
-                }
-
-                guard let data = data,
-                      let image = UIImage(data: data) else {
-                    print("Invalid Data or Image")
-                    return
-                }
-
-                ImageCache.shared.setObject(image, forKey: currentUrlString as NSString)
-
-                DispatchQueue.main.async {
-                    if let visibleCell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell {
-                        visibleCell.image.image = image
-                        visibleCell.activityIndicator.stopAnimating()
-                    }
-                }
-            }.resume()
-        }
-
+        cell.configure(with: content)
         return cell
     }
 }

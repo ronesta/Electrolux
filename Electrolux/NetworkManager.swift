@@ -41,7 +41,6 @@ final class NetworkManager {
                 let items = photos.photos.photo.compactMap {
                     $0.urlO != nil ? $0 : nil
                 }.prefix(20)
-                print("Loaded \(items.count) photos")
                 completion(.success(Array(items)))
             } catch {
                 print("Decoding error: \(error.localizedDescription)")
