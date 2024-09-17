@@ -112,24 +112,27 @@ extension FirstViewController: UICollectionViewDelegate {
 
         let productImageViewController = ProductCardViewController()
 
-        navigationController?.pushViewController(productImageViewController,
-                                                 animated: true
-                                                )
+        navigationController?.pushViewController(productImageViewController, animated: true)
 
         guard let currentUrlString = photos[indexPath.item].urlO,
               let currentUrl = URL(string: currentUrlString) else {
             return
         }
 
-        DispatchQueue.global(qos: .userInitiated).async {
-            do {
-                let imageData = try Data(contentsOf: currentUrl)
-                DispatchQueue.main.async {
-                    productImageViewController.productImage.image = UIImage(data: imageData)
-                }
-            } catch {
+        URLSession.shared.dataTask(with: currentUrl) { data, response, error in
+            if let error {
                 print("Failed to load image data:", error.localizedDescription)
+                return
             }
-        }
+
+            guard let data else {
+                print("No data received")
+                return
+            }
+
+            DispatchQueue.main.async {
+                productImageViewController.productImage.image = UIImage(data: data)
+            }
+        }.resume()
     }
 }
