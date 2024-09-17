@@ -9,7 +9,6 @@ import UIKit
 import PureLayout
 
 final class SecondViewController: UIViewController {
-
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "robot")

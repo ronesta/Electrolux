@@ -22,7 +22,7 @@ final class CustomCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        costomizeCell()
+        customizeCell()
     }
     
     required init?(coder: NSCoder) {
@@ -44,35 +44,43 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         activityIndicator.autoCenterInSuperview()
     }
     
-    private func costomizeCell() {
+    private func customizeCell() {
         backgroundColor = .clear
     }
     
     func configure(with photo: Photo) {
         activityIndicator.startAnimating()
-        if let currentUrlString = photo.urlO {
-            let cacheKey = NSString(string: currentUrlString)
-            
-            if let cachedImage = ImageCache.shared.object(forKey: cacheKey) {
-                image.image = cachedImage
-                activityIndicator.stopAnimating()
-            } else {
-                guard let url = URL(string: currentUrlString) else {
-                    image.image = nil
-                    activityIndicator.stopAnimating()
-                    return
-                }
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: url),
-                       let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            ImageCache.shared.setObject(image, forKey: cacheKey)
-                            self.image.image = image
-                            self.activityIndicator.stopAnimating()
-                        }
+
+        guard let currentUrlString = photo.urlO, let url = URL(string: currentUrlString) else {
+            image.image = nil
+            activityIndicator.stopAnimating()
+            return
+        }
+
+        let cacheKey = NSString(string: currentUrlString)
+
+        if let cachedImage = ImageCache.shared.object(forKey: cacheKey) {
+            image.image = cachedImage
+            activityIndicator.stopAnimating()
+        } else {
+            URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                DispatchQueue.main.async {
+                    self?.activityIndicator.stopAnimating()
+
+                    if let error {
+                        print("Ошибка загрузки изображения: \(error)")
+                        self?.image.image = nil
+                        return
+                    }
+
+                    if let data, let image = UIImage(data: data) {
+                        ImageCache.shared.setObject(image, forKey: cacheKey)
+                        self?.image.image = image
+                    } else {
+                        self?.image.image = nil
                     }
                 }
-            }
+            }.resume()
         }
     }
 }

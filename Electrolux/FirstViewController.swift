@@ -9,7 +9,6 @@ import UIKit
 import PureLayout
 
 final class FirstViewController: UIViewController {
-
     private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = .minimal
@@ -117,8 +116,7 @@ extension FirstViewController: UICollectionViewDelegate {
                                                  animated: true
                                                 )
 
-        let photo = photos[indexPath.item]
-        guard let currentUrlString = photo.urlO,
+        guard let currentUrlString = photos[indexPath.item].urlO,
               let currentUrl = URL(string: currentUrlString) else {
             return
         }
