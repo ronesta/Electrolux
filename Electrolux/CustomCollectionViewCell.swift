@@ -68,7 +68,7 @@ final class CustomCollectionViewCell: UICollectionViewCell {
                     self?.activityIndicator.stopAnimating()
 
                     if let error {
-                        print("Ошибка загрузки изображения: \(error)")
+                        print("Failed to load image data: \(error)")
                         self?.image.image = nil
                         return
                     }

@@ -126,7 +126,7 @@ extension FirstViewController: UICollectionViewDelegate {
             }
 
             guard let data else {
-                print("No data received")
+                print("No data")
                 return
             }
 

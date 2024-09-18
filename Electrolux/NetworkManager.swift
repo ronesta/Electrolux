@@ -13,8 +13,6 @@ final class NetworkManager {
 
     private let urlString = "https://flickr.com/services/rest/?method=flickr.photos.search&api_key=1a958538e8bb6e25cf246b9c8a98a8c2&tags=electrolux&format=json&nojsoncallback=1&extras=url_o"
 
-    private let session = URLSession.shared
-
     func loadImages(completion: @escaping (Result<[Photo], Error>) -> Void) {
         guard let url = URL(string: urlString) else {
             print("Invalid URL")
@@ -22,7 +20,7 @@ final class NetworkManager {
             return
         }
 
-        session.dataTask(with: url) { data, _, error in
+        URLSession.shared.dataTask(with: url) { data, response, error in
             if let error {
                 print("Error: \(error.localizedDescription)")
                 completion(.failure(error))
@@ -36,11 +34,15 @@ final class NetworkManager {
             }
 
             do {
-                let photos = try JSONDecoder().decode(PostImages.self, from: data)
-                let items = photos.photos.photo.compactMap {
-                    $0.urlO != nil ? $0 : nil
-                }.prefix(20)
-                completion(.success(Array(items)))
+                let response = try JSONDecoder().decode(PostImages.self, from: data)
+                var items = [Photo]()
+                for photo in response.photos.photo where photo.urlO != nil {
+                    items.append(photo)
+                    if items.count == 20 {
+                        break
+                    }
+                }
+                completion(.success(items))
             } catch {
                 print("Decoding error: \(error.localizedDescription)")
                 completion(.failure(error))

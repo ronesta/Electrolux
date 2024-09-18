@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct PostImages: Codable {
+struct PostImages: Decodable {
     let photos: Photos
 }
 
-struct Photos: Codable {
+struct Photos: Decodable {
     let photo: [Photo]
 }
 
-struct Photo: Codable {
+struct Photo: Decodable {
     let urlO: String?
 
     enum CodingKeys: String, CodingKey {
