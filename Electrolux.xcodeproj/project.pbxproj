@@ -10,11 +10,11 @@
 		94314B00D6E17359BD81626F /* Pods_Electrolux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7F99DE2D4D144FFB95971 /* Pods_Electrolux.framework */; };
 		E12C57AD2C723DD4006D88A6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C57AC2C723DD4006D88A6 /* SecondViewController.swift */; };
 		E12C57B32C724D40006D88A6 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C57B22C724D40006D88A6 /* CustomCollectionViewCell.swift */; };
-		E12C57B52C726465006D88A6 /* DescriptionOfProductFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C57B42C726465006D88A6 /* DescriptionOfProductFile.swift */; };
 		E12C57B72C7265DD006D88A6 /* ProductCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C57B62C7265DD006D88A6 /* ProductCardViewController.swift */; };
 		E12C57B92C726665006D88A6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C57B82C726665006D88A6 /* NetworkManager.swift */; };
 		E12C58F32C7CE4FC006D88A6 /* PostImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C58F22C7CE4FC006D88A6 /* PostImages.swift */; };
 		E12C58F52C7CF8A0006D88A6 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C58F42C7CF8A0006D88A6 /* ImageCache.swift */; };
+		E13D239E2CA1FEB8003B64BB /* BiographyTextFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D239D2CA1FEB8003B64BB /* BiographyTextFile.swift */; };
 		E1570D432C6D23CC00886E75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1570D422C6D23CC00886E75 /* AppDelegate.swift */; };
 		E1570D452C6D23CC00886E75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1570D442C6D23CC00886E75 /* SceneDelegate.swift */; };
 		E1570D472C6D23CC00886E75 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1570D462C6D23CC00886E75 /* FirstViewController.swift */; };
@@ -28,11 +28,11 @@
 		4CE7F99DE2D4D144FFB95971 /* Pods_Electrolux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Electrolux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12C57AC2C723DD4006D88A6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		E12C57B22C724D40006D88A6 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
-		E12C57B42C726465006D88A6 /* DescriptionOfProductFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionOfProductFile.swift; sourceTree = "<group>"; };
 		E12C57B62C7265DD006D88A6 /* ProductCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViewController.swift; sourceTree = "<group>"; };
 		E12C57B82C726665006D88A6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E12C58F22C7CE4FC006D88A6 /* PostImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImages.swift; sourceTree = "<group>"; };
 		E12C58F42C7CF8A0006D88A6 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		E13D239D2CA1FEB8003B64BB /* BiographyTextFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyTextFile.swift; sourceTree = "<group>"; };
 		E1570D3F2C6D23CC00886E75 /* Electrolux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrolux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1570D422C6D23CC00886E75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1570D442C6D23CC00886E75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 				E12C57B62C7265DD006D88A6 /* ProductCardViewController.swift */,
 				E12C57AC2C723DD4006D88A6 /* SecondViewController.swift */,
 				E12C57B22C724D40006D88A6 /* CustomCollectionViewCell.swift */,
-				E12C57B42C726465006D88A6 /* DescriptionOfProductFile.swift */,
+				E13D239D2CA1FEB8003B64BB /* BiographyTextFile.swift */,
 				E12C57B82C726665006D88A6 /* NetworkManager.swift */,
 				E1CCB9C02C7E54FE00774927 /* NetworkError.swift */,
 				E12C58F22C7CE4FC006D88A6 /* PostImages.swift */,
@@ -135,6 +135,7 @@
 				E1570D3D2C6D23CC00886E75 /* Resources */,
 				E1570D592C6D258500886E75 /* ShellScript */,
 				701C780B4EC60FCCDBA8BC1E /* [CP] Embed Pods Frameworks */,
+				E13D239F2CA48A34003B64BB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -236,6 +237,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E13D239F2CA48A34003B64BB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			showEnvVarsInLog = 0;
+		};
 		E1570D592C6D258500886E75 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -263,9 +283,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13D239E2CA1FEB8003B64BB /* BiographyTextFile.swift in Sources */,
 				E12C58F52C7CF8A0006D88A6 /* ImageCache.swift in Sources */,
 				E12C57AD2C723DD4006D88A6 /* SecondViewController.swift in Sources */,
-				E12C57B52C726465006D88A6 /* DescriptionOfProductFile.swift in Sources */,
 				E12C57B72C7265DD006D88A6 /* ProductCardViewController.swift in Sources */,
 				E12C57B32C724D40006D88A6 /* CustomCollectionViewCell.swift in Sources */,
 				E12C57B92C726665006D88A6 /* NetworkManager.swift in Sources */,

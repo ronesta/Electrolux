@@ -19,18 +19,18 @@ final class FirstViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width / 2.5),
                                  height: (UIScreen.main.bounds.width / 2.5)
-                                )
+        )
         layout.minimumLineSpacing = 50
         layout.minimumInteritemSpacing = 50
         layout.sectionInset = UIEdgeInsets(top: 11,
                                            left: 11,
                                            bottom: 10,
                                            right: 11
-                                          )
+        )
 
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout
-                                             )
+        )
         collectionView.backgroundColor = .clear
         collectionView.register(
             CustomCollectionViewCell.self,
@@ -41,7 +41,7 @@ final class FirstViewController: UIViewController {
     }()
 
     var photos = [Photo]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
@@ -94,9 +94,12 @@ extension FirstViewController: UICollectionViewDataSource {
         photos.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let content = photos[indexPath.item]
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.id, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: CustomCollectionViewCell.id,
+            for: indexPath)
                 as? CustomCollectionViewCell else {
             return UICollectionViewCell()
         }
@@ -110,29 +113,13 @@ extension FirstViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Select", indexPath.item)
 
-        let productImageViewController = ProductCardViewController()
-
-        navigationController?.pushViewController(productImageViewController, animated: true)
-
         guard let currentUrlString = photos[indexPath.item].urlO,
               let currentUrl = URL(string: currentUrlString) else {
             return
         }
 
-        URLSession.shared.dataTask(with: currentUrl) { data, response, error in
-            if let error {
-                print("Failed to load image data:", error.localizedDescription)
-                return
-            }
+        let productImageViewController = ProductCardViewController(imageURL: currentUrl)
 
-            guard let data else {
-                print("No data")
-                return
-            }
-
-            DispatchQueue.main.async {
-                productImageViewController.productImage.image = UIImage(data: data)
-            }
-        }.resume()
+        navigationController?.pushViewController(productImageViewController, animated: true)
     }
 }

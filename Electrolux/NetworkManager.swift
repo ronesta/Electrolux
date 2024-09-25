@@ -11,7 +11,9 @@ final class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
 
+    // swiftlint:disable line_length
     private let urlString = "https://flickr.com/services/rest/?method=flickr.photos.search&api_key=1a958538e8bb6e25cf246b9c8a98a8c2&tags=electrolux&format=json&nojsoncallback=1&extras=url_o"
+    // swiftlint:enable line_length
 
     func loadImages(completion: @escaping (Result<[Photo], Error>) -> Void) {
         guard let url = URL(string: urlString) else {

@@ -10,49 +10,53 @@ import PureLayout
 
 final class CustomCollectionViewCell: UICollectionViewCell {
     static let id = "CustomCollectionViewCell"
-    
-    let image = UIImageView()
-    
-    let activityIndicator: UIActivityIndicatorView = {
+
+    private let imageView = UIImageView()
+
+    private let activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .medium)
         activityIndicator.hidesWhenStopped = true
         return activityIndicator
     }()
-    
+
+    private var photo: Photo?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
         customizeCell()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
-        image.image = nil
+        imageView.image = nil
+        activityIndicator.stopAnimating()
     }
-    
+
     private func setupViews() {
-        contentView.addSubview(image)
+        contentView.addSubview(imageView)
         contentView.addSubview(activityIndicator)
-        
-        image.autoSetDimensions(to: CGSize(width: contentView.bounds.width, height: contentView.bounds.height))
-        image.autoCenterInSuperview()
-        
+
+        imageView.autoSetDimensions(to: CGSize(width: contentView.bounds.width, height: contentView.bounds.height))
+        imageView.autoCenterInSuperview()
+
         activityIndicator.autoCenterInSuperview()
     }
-    
+
     private func customizeCell() {
         backgroundColor = .clear
     }
-    
+
     func configure(with photo: Photo) {
+        self.photo = photo
         activityIndicator.startAnimating()
 
         guard let currentUrlString = photo.urlO, let url = URL(string: currentUrlString) else {
-            image.image = nil
+            imageView.image = nil
             activityIndicator.stopAnimating()
             return
         }
@@ -60,24 +64,22 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         let cacheKey = NSString(string: currentUrlString)
 
         if let cachedImage = ImageCache.shared.object(forKey: cacheKey) {
-            image.image = cachedImage
+            imageView.image = cachedImage
             activityIndicator.stopAnimating()
         } else {
-            URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
                 DispatchQueue.main.async {
-                    self?.activityIndicator.stopAnimating()
-
                     if let error {
                         print("Failed to load image data: \(error)")
-                        self?.image.image = nil
                         return
                     }
 
-                    if let data, let image = UIImage(data: data) {
+                    if let data,
+                       let image = UIImage(data: data),
+                       photo == self?.photo {
                         ImageCache.shared.setObject(image, forKey: cacheKey)
-                        self?.image.image = image
-                    } else {
-                        self?.image.image = nil
+                        self?.imageView.image = image
+                        self?.activityIndicator.stopAnimating()
                     }
                 }
             }.resume()

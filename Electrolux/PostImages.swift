@@ -15,7 +15,7 @@ struct Photos: Decodable {
     let photo: [Photo]
 }
 
-struct Photo: Decodable {
+struct Photo: Decodable, Equatable {
     let urlO: String?
 
     enum CodingKeys: String, CodingKey {
