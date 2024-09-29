@@ -96,14 +96,23 @@ extension FirstViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let content = photos[indexPath.item]
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CustomCollectionViewCell.id,
             for: indexPath)
                 as? CustomCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.configure(with: content)
+        guard let imageURL = photos[indexPath.item].urlO else {
+            return cell
+        }
+        cell.currentImageURL = imageURL
+        ImageLoader.shared.loadImage(from: imageURL) { loadedImage in
+            DispatchQueue.main.async {
+                if cell.currentImageURL == imageURL {
+                    cell.configure(with: loadedImage)
+                }
+            }
+        }
         return cell
     }
 }

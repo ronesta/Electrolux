@@ -13,6 +13,8 @@ final class CustomCollectionViewCell: UICollectionViewCell {
 
     private let imageView = UIImageView()
 
+    var currentImageURL: String?
+
     private let activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .medium)
         activityIndicator.hidesWhenStopped = true
@@ -51,38 +53,7 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         backgroundColor = .clear
     }
 
-    func configure(with photo: Photo) {
-        self.photo = photo
-        activityIndicator.startAnimating()
-
-        guard let currentUrlString = photo.urlO, let url = URL(string: currentUrlString) else {
-            imageView.image = nil
-            activityIndicator.stopAnimating()
-            return
-        }
-
-        let cacheKey = NSString(string: currentUrlString)
-
-        if let cachedImage = ImageCache.shared.object(forKey: cacheKey) {
-            imageView.image = cachedImage
-            activityIndicator.stopAnimating()
-        } else {
-            URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-                DispatchQueue.main.async {
-                    if let error {
-                        print("Failed to load image data: \(error)")
-                        return
-                    }
-
-                    if let data,
-                       let image = UIImage(data: data),
-                       photo == self?.photo {
-                        ImageCache.shared.setObject(image, forKey: cacheKey)
-                        self?.imageView.image = image
-                        self?.activityIndicator.stopAnimating()
-                    }
-                }
-            }.resume()
-        }
+    func configure(with image: UIImage?) {
+        imageView.image = image
     }
 }
