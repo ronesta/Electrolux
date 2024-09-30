@@ -21,8 +21,6 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         return activityIndicator
     }()
 
-    private var photo: Photo?
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
