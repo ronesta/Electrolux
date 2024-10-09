@@ -13,8 +13,6 @@ final class CustomCollectionViewCell: UICollectionViewCell {
 
     private let imageView = UIImageView()
 
-    var currentImageURL: String?
-
     private let activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .medium)
         activityIndicator.hidesWhenStopped = true

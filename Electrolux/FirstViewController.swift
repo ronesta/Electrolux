@@ -102,13 +102,14 @@ extension FirstViewController: UICollectionViewDataSource {
                 as? CustomCollectionViewCell else {
             return UICollectionViewCell()
         }
+
         guard let imageURL = photos[indexPath.item].urlO else {
             return cell
         }
-        cell.currentImageURL = imageURL
+
         ImageLoader.shared.loadImage(from: imageURL) { loadedImage in
             DispatchQueue.main.async {
-                if cell.currentImageURL == imageURL {
+                if let cell = collectionView.cellForItem(at: indexPath) as? CustomCollectionViewCell {
                     cell.configure(with: loadedImage)
                 }
             }
